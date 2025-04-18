@@ -1,0 +1,128 @@
+[
+  {
+    "model": "app.category",
+    "pk": 1,
+    "fields": {
+      "name": "SUV",
+      "image": "uploads/20231203001503suv.png"
+    }
+  },
+  {
+    "model": "app.category",
+    "pk": 3,
+    "fields": {
+      "name": "Electric Cars",
+      "image": "uploads/20231203023212ElectricCar.png"
+    }
+  },
+  {
+    "model": "app.category",
+    "pk": 4,
+    "fields": {
+      "name": "Pickup Trucks",
+      "image": "uploads/20231203023404PickupTrucks.png"
+    }
+  },
+  {
+    "model": "app.category",
+    "pk": 5,
+    "fields": {
+      "name": "Convertibles",
+      "image": "uploads/20231203023535Convertibles.png"
+    }
+  },
+  {
+    "model": "app.category",
+    "pk": 7,
+    "fields": {
+      "name": "Guaranteed Car",
+      "image": "uploads/20231203030634Guaranteed.png"
+    }
+  },
+  {
+    "model": "app.category",
+    "pk": 8,
+    "fields": {
+      "name": "Four Wheel Drive",
+      "image": "uploads/20231203030750FourWheelDrive.png"
+    }
+  },
+  {
+    "model": "app.car",
+    "pk": 1,
+    "fields": {
+      "name": "Mahindra",
+      "model": "XUV700",
+      "year": 2021,
+      "rental_price_per_day": 100.0,
+      "available": 0,
+      "car_image": "uploads/20231202234837suvsCar.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "app.car",
+    "pk": 3,
+    "fields": {
+      "name": "G-Class",
+      "model": "2020",
+      "year": 2022,
+      "rental_price_per_day": 150.0,
+      "available": 1,
+      "car_image": "uploads/20231203180916Gclass1.jpg",
+      "category": 8
+    }
+  },
+  {
+    "model": "app.car",
+    "pk": 4,
+    "fields": {
+      "name": "Ford Mustang",
+      "model": "SM330",
+      "year": 2021,
+      "rental_price_per_day": 250.0,
+      "available": 1,
+      "car_image": "uploads/20231203181152fordmustang.png",
+      "category": 5
+    }
+  },
+  {
+    "model": "app.car",
+    "pk": 5,
+    "fields": {
+      "name": "Chevrolet",
+      "model": "M210",
+      "year": 2023,
+      "rental_price_per_day": 300.0,
+      "available": 1,
+      "car_image": "uploads/20231203181646Chevrolet_M210.png",
+      "category": 5
+    }
+  },
+  {
+    "model": "app.car",
+    "pk": 6,
+    "fields": {
+      "name": "Audi",
+      "model": "Mood10",
+      "year": 2020,
+      "rental_price_per_day": 150.0,
+      "available": 2,
+      "car_image": "uploads/20231204172834Audi_Mood10.png",
+      "category": 5
+    }
+  },
+  {
+    "model": "app.car",
+    "pk": 9,
+    "fields": {
+      "name": "Golf 8",
+      "model": "TDI",
+      "year": 2023,
+      "rental_price_per_day": 250.0,
+      "available": 1,
+      "car_image": "uploads/20231215215913car3.jpg",
+      "category": 3
+    }
+  }
+]

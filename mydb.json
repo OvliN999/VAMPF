@@ -1,0 +1,592 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "app",
+    "model": "category"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "app",
+    "model": "car"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "app",
+    "model": "booking"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add category",
+    "content_type": [
+      "app",
+      "category"
+    ],
+    "codename": "add_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change category",
+    "content_type": [
+      "app",
+      "category"
+    ],
+    "codename": "change_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete category",
+    "content_type": [
+      "app",
+      "category"
+    ],
+    "codename": "delete_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view category",
+    "content_type": [
+      "app",
+      "category"
+    ],
+    "codename": "view_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add car",
+    "content_type": [
+      "app",
+      "car"
+    ],
+    "codename": "add_car"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change car",
+    "content_type": [
+      "app",
+      "car"
+    ],
+    "codename": "change_car"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete car",
+    "content_type": [
+      "app",
+      "car"
+    ],
+    "codename": "delete_car"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view car",
+    "content_type": [
+      "app",
+      "car"
+    ],
+    "codename": "view_car"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add booking",
+    "content_type": [
+      "app",
+      "booking"
+    ],
+    "codename": "add_booking"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change booking",
+    "content_type": [
+      "app",
+      "booking"
+    ],
+    "codename": "change_booking"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete booking",
+    "content_type": [
+      "app",
+      "booking"
+    ],
+    "codename": "delete_booking"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view booking",
+    "content_type": [
+      "app",
+      "booking"
+    ],
+    "codename": "view_booking"
+  }
+}
+
+{
+  "model": "app.category",
+  "pk": 1,
+  "fields": {
+    "name": "SUV",
+    "image": "uploads/20231203001503suv.png"
+  }
+},
+{
+  "model": "app.category",
+  "pk": 3,
+  "fields": {
+    "name": "Electric Cars",
+    "image": "uploads/20231203023212ElectricCar.png"
+  }
+},
+{
+  "model": "app.category",
+  "pk": 4,
+  "fields": {
+    "name": "Pickup Trucks",  // Fixed typo: "Truks" → "Trucks"
+    "image": "uploads/20231203023404PickupTrucks.png"
+  }
+},
+{
+  "model": "app.category",
+  "pk": 5,
+  "fields": {
+    "name": "Convertibles",
+    "image": "uploads/20231203023535Convertibles.png"
+  }
+},
+{
+  "model": "app.category",
+  "pk": 7,
+  "fields": {
+    "name": "Guaranteed Car",
+    "image": "uploads/20231203030634Guaranteed.png"
+  }
+},
+{
+  "model": "app.category",
+  "pk": 8,
+  "fields": {
+    "name": "Four Wheel Drive",
+    "image": "uploads/20231203030750FourWheelDrive.png"  // Fixed image reference
+  }
+},
+
+// ===== CORRECTED CARS =====
+{
+  "model": "app.car",
+  "pk": 1,
+  "fields": {
+    "name": "Mahindra",
+    "model": "XUV700",
+    "year": 2021,
+    "rental_price_per_day": 100.0,
+    "available": 0,
+    "car_image": "uploads/20231202234837suvsCar.jpg",  // Correct for SUV
+    "category": 1
+  }
+},
+{
+  "model": "app.car",
+  "pk": 3,
+  "fields": {
+    "name": "G-Class",
+    "model": "2020",
+    "year": 2022,
+    "rental_price_per_day": 150.0,
+    "available": 1,
+    "car_image": "uploads/20231203180916Gclass1.jpg",  // Example: Could rename to "Mercedes_G-Class.jpg"
+    "category": 8  // Correct for Four Wheel Drive
+  }
+},
+{
+  "model": "app.car",
+  "pk": 4,
+  "fields": {
+    "name": "Ford Mustang",
+    "model": "SM330",
+    "year": 2021,
+    "rental_price_per_day": 250.0,
+    "available": 1,
+    "car_image": "uploads/20231203181152fordmustang.png",
+    "category": 5  // Correct for Convertibles
+  }
+},
+{
+  "model": "app.car",
+  "pk": 5,
+  "fields": {
+    "name": "Chevrolet",
+    "model": "M210",
+    "year": 2023,
+    "rental_price_per_day": 300.0,
+    "available": 1,
+    "car_image": "uploads/20231203181646Chevrolet_M210.png",  // Fixed image
+    "category": 5
+  }
+},
+{
+  "model": "app.car",
+  "pk": 6,
+  "fields": {
+    "name": "Audi",
+    "model": "Mood10",
+    "year": 2020,
+    "rental_price_per_day": 150.0,
+    "available": 2,
+    "car_image": "uploads/20231204172834Audi_Mood10.png",  // Fixed image
+    "category": 5
+  }
+},
+{
+  "model": "app.car",
+  "pk": 9,
+  "fields": {
+    "name": "Golf 8",
+    "model": "TDI",
+    "year": 2023,
+    "rental_price_per_day": 250.0,
+    "available": 1,
+    "car_image": "uploads/20231215215913car3.jpg",
+    "category": 3  // Reassigned to "Electric Cars" (adjust if needed)
+  }
+},
+
+// ... (app.booking entries remain unchanged)
+]

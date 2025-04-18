@@ -1,0 +1,419 @@
+{% load static %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/rover.jpg' %}" class="img-fluid d-block w-100" alt="Car Image">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="fw-bold">Book A Car Now</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/siera.jpeg' %}" class="img-fluid d-block w-100" alt="Car Image">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Book A Car Now</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Jharkhand Map</title>
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBwAYi1hXuuC-hqhNgph3IoKEYZ4TBGYc&libraries=places&callback=initAutocomplete"></script>
+
+    <script>
+        function initMap() {
+            var jharkhand = { lat: 23.6102, lng: 85.2799 }; // Coordinates for Jharkhand
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 7,
+                center: jharkhand,
+            });
+
+            var marker = new google.maps.Marker({
+                position: jharkhand,
+                map: map,
+                title: "Jharkhand"
+            });
+        }
+    </script>
+</head>
+<body onload="initMap()">
+    <h2 style="text-align: center;">Explore Jharkhand</h2>
+    <div class="container">
+  <div id="map" style="height: 400px; width: 100%;"></div>
+</div>
+
+<script>
+  function initMap() {
+    var jharkhand = { lat: 23.6102, lng: 85.2799 };
+    var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 7,
+        center: jharkhand,
+    });
+
+    new google.maps.Marker({
+        position: jharkhand,
+        map: map,
+        title: "Jharkhand"
+    });
+
+    // Call autocomplete setup here
+    const pickupInput = document.getElementById('pickupLocation');
+    const dropoffInput = document.getElementById('dropoffLocation');
+
+    new google.maps.places.Autocomplete(pickupInput, {
+        types: ['geocode'],
+        componentRestrictions: { country: "in" }
+    });
+
+    new google.maps.places.Autocomplete(dropoffInput, {
+        types: ['geocode'],
+        componentRestrictions: { country: "in" }
+    });
+  }
+</script>
+
+
+</body>
+</html>
+
+<!-- Pick-up and Drop-off Location, Date, and Time -->
+<div class="container mt-5">
+    <div class="rental-form card border-0 shadow-lg">
+        <div class="card-header bg-primary text-white py-4">
+            <h3 class="mb-0">🚗 Find Your Perfect Rental</h3>
+            <p class="mb-0">Start your journey with us</p>
+        </div>
+        
+        <div class="card-body p-4">
+            <form method="POST" action="{% url 'category' %}">
+                {% csrf_token %}
+
+                <div class="row g-4">
+                    <!-- Location Section -->
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control rounded-pill" id="pickupLocation" 
+                                   placeholder=" " required>
+                            <label for="pickupLocation" class="ms-3">
+                                <i class="fas fa-map-marker-alt me-2"></i>Pick-up Location
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control rounded-pill" id="dropoffLocation" 
+                                   placeholder=" " required>
+                            <label for="dropoffLocation" class="ms-3">
+                                <i class="fas fa-flag-checkered me-2"></i>Drop-off Location
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Date/Time Section -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label text-muted small mb-2">
+                                <i class="fas fa-calendar-alt me-2"></i>Pick-up Date & Time
+                            </label>
+                            <div class="input-group">
+                                <input type="datetime-local" class="form-control flatpickr" 
+                                       id="pickupDateTime" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label text-muted small mb-2">
+                                <i class="fas fa-calendar-check me-2"></i>Drop-off Date & Time
+                            </label>
+                            <div class="input-group">
+                                <input type="datetime-local" class="form-control flatpickr" 
+                                       id="dropoffDateTime" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg rounded-pill py-3">
+                        Search Vehicles 
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card-footer bg-light py-3">
+            <div class="row g-2 text-center">
+                <div class="col">
+                    <span class="badge bg-success me-2">
+                        <i class="fas fa-shield-alt"></i>
+                    </span>
+                    Premium Insurance
+                </div>
+                <div class="col">
+                    <span class="badge bg-info me-2">
+                        <i class="fas fa-clock"></i>
+                    </span>
+                    24/7 Support
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .rental-form {
+        border-radius: 1.5rem;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+    
+    .rental-form:hover {
+        transform: translateY(-5px);
+    }
+    
+    .form-control {
+        border: 2px solid #e9ecef;
+        transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+    }
+    
+    .rounded-pill {
+        border-radius: 50rem !important;
+    }
+    
+    .flatpickr-input {
+        height: 45px;
+        padding: 10px 20px;
+    }
+</style>
+
+<!-- Required Libraries -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    // Initialize datepicker
+    flatpickr(".flatpickr", {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+        minDate: "today",
+        time_24hr: true
+    });
+
+    // Form validation
+    document.querySelector('form').addEventListener('submit', function(e) {
+        const pickup = document.getElementById('pickupDateTime').value;
+        const dropoff = document.getElementById('dropoffDateTime').value;
+        
+        if (new Date(pickup) >= new Date(dropoff)) {
+            e.preventDefault();
+            const alert = document.createElement('div');
+            alert.className = 'alert alert-danger mt-3';
+            alert.innerHTML = '⚠️ Drop-off time must be after pick-up time';
+            this.parentNode.insertBefore(alert, this.nextSibling);
+        }
+    });
+</script>
+
+<!-- Popular Vehicles Section -->
+<div class="container mt-5">
+    <h3 class="text-center">Popular Vehicles</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Vehicle 1 -->
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/rover.jpg' %}" class="card-img-top" alt="Rover">
+                <div class="card-body">
+                    <h5 class="card-title">Range Rover</h5>
+                    <p class="card-text">Experience the ultimate comfort and luxury with our Rover SUV, perfect for any road trip.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vehicle 2 -->
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/siera.jpeg' %}" class="card-img-top" alt="Tata">
+                <div class="card-body">
+                    <h5 class="card-title">Tata Siera</h5>
+                    <p class="card-text">Reliable and affordable, the Tata Siera is ideal for city driving and long trips.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vehicle 3 -->
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/virtus.jpg' %}" class="card-img-top" alt="Vehicle 3">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen Virtus</h5>
+                    <p class="card-text">Luxury at its best. Rent our premium sedan for an unparalleled driving experience.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vehicle 4 -->
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/curvv.jpg' %}" class="card-img-top" alt="Vehicle 4">
+                <div class="card-body">
+                    <h5 class="card-title">Tata Curvv</h5>
+                    <p class="card-text">For those who love speed. Rent our Sports Coupe for an exciting ride.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vehicle 5 -->
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/ww.jpeg' %}" class="card-img-top" alt="Vehicle 5">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen Virtus convertible</h5>
+                    <p class="card-text">Feel the breeze with our convertible car, perfect for sunny days and scenic drives.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vehicle 6 -->
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/punch.webp' %}" class="card-img-top" alt="Vehicle 6">
+                <div class="card-body">
+                    <h5 class="card-title">Tata Punch</h5>
+                    <p class="card-text">Ideal for city driving and short trips, our compact hatchback is an affordable option.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vehicle 7 -->
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/force.avif' %}" class="card-img-top" alt="Vehicle 7">
+                <div class="card-body">
+                    <h5 class="card-title">Force Urbania</h5>
+                    <p class="card-text">Perfect for family trips. Rent our spacious minivan with room for everyone.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vehicle 8 -->
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/gclass.png' %}" class="card-img-top" alt="Vehicle 8">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes G Class</h5>
+                    <p class="card-text">Travel in style and comfort with our luxury SUV, designed for long drives.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vehicle 9 -->
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/be6.webp' %}" class="card-img-top" alt="Vehicle 9">
+                <div class="card-body">
+                    <h5 class="card-title">Mahindra BE6</h5>
+                    <p class="card-text">Go green with our electric car, offering an eco-friendly and quiet ride.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vehicle 10 -->
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="{% static 'images/jeep.avif' %}" class="card-img-top" alt="Vehicle 10">
+                <div class="card-body">
+                    <h5 class="card-title">Jeep Wrangler</h5>
+                    <p class="card-text">Take on any terrain with our off-road Jeep. Perfect for adventure seekers.</p>
+                    <a href="#" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+     .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .card-img-top {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        object-fit: cover;
+        height: 200px;
+    }
+    .btn-primary {
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        border: none;
+        transition: background 0.3s;
+    }
+    .btn-primary:hover {
+        background: linear-gradient(45deg, #0056b3, #004095);
+    }
+</style>
+<div class="container mt-5">
+    <h3 class="text-center mb-4">🚗 Popular Vehicles 🚙</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for vehicle in vehicles %}
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="{% static vehicle.image %}" class="card-img-top" alt="{{ vehicle.name }}" loading="lazy">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ vehicle.name }}</h5>
+                    <p class="card-text">{{ vehicle.description }}</p>
+                    <a href="{{ vehicle.link }}" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
